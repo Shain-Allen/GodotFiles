@@ -15,8 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Just thy test"
-run/main_scene="res://Node2D.tscn"
+config/name="Learning Tilemaps"
 config/icon="res://icon.png"
 
 [rendering]
