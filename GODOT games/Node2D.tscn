@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 30, 30 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32, 32 )
+
+[node name="World" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
+position = Vector2( 480, 300 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+
+[node name="Node" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Wall" type="StaticBody2D" parent="Node"]
+editor/display_folded = true
+position = Vector2( 480, 390 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node/Wall"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Wall"]
+shape = SubResource( 2 )
+
+[node name="Wall2" type="StaticBody2D" parent="Node"]
+editor/display_folded = true
+position = Vector2( 540, 390 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node/Wall2"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Wall2"]
+shape = SubResource( 2 )
+
+[node name="Wall3" type="StaticBody2D" parent="Node"]
+editor/display_folded = true
+position = Vector2( 420, 390 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node/Wall3"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Wall3"]
+shape = SubResource( 2 )
+
+[node name="Wall4" type="StaticBody2D" parent="Node"]
+editor/display_folded = true
+position = Vector2( 420, 390 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Node/Wall4"]
+modulate = Color( 0, 0, 0, 1 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/Wall4"]
+shape = SubResource( 2 )
+
