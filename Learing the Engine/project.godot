@@ -15,8 +15,8 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Just thy test"
-run/main_scene="res://Node2D.tscn"
+config/name="Learing the Engine"
+run/main_scene="res://Hello.tscn"
 config/icon="res://icon.png"
 
 [rendering]
