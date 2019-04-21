@@ -1,0 +1,121 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Node" type="Node"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -40, -70 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Player"]
+position = Vector2( 480, 270 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Player"]
+polygon = PoolVector2Array( 450, 240, 510, 240, 510, 300, 450, 300, 450, 240 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 480, 270 )
+current = true
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
+
+[node name="Walls" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="Wall" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
+[node name="Wall2" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 60, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall2"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall2"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
+[node name="Wall3" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( -60, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall3"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall3"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
+[node name="Wall4" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 120, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall4"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall4"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
+[node name="Wall6" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( 120, -60 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall6"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall6"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
+[node name="Wall5" type="KinematicBody2D" parent="Walls"]
+editor/display_folded = true
+position = Vector2( -120, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Walls/Wall5"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 440, 290 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Walls/Wall5"]
+polygon = PoolVector2Array( 410, 260, 470, 260, 470, 320, 410, 320 )
+
