@@ -21,6 +21,7 @@ margin_bottom = 211.0
 margin_right = 83.0
 margin_bottom = 14.0
 text = "THE GAME"
+align = 1
 
 [node name="Start game" type="Button" parent="CenterContainer/VBoxContainer"]
 margin_top = 18.0
