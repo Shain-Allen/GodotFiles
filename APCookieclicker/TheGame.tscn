@@ -1,12 +1,15 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01a.png" type="Texture" id=1]
 [ext_resource path="res://ProgressBar.gd" type="Script" id=2]
-[ext_resource path="res://Timer.gd" type="Script" id=3]
-[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01b.png" type="Texture" id=4]
+[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01b.png" type="Texture" id=3]
+[ext_resource path="res://ProgressBar2.gd" type="Script" id=4]
 [ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01c.png" type="Texture" id=5]
-[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01d.png" type="Texture" id=6]
-[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01e.png" type="Texture" id=7]
+[ext_resource path="res://ProgressBar3.gd" type="Script" id=6]
+[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01d.png" type="Texture" id=7]
+[ext_resource path="res://ProgressBar4.gd" type="Script" id=8]
+[ext_resource path="res://Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01e.png" type="Texture" id=9]
+[ext_resource path="res://ProgressBar5.gd" type="Script" id=10]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -40,11 +43,8 @@ texture = ExtResource( 1 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
+max_value = 2.0
 script = ExtResource( 2 )
-
-[node name="Timer" type="Timer" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/ProgressBar"]
-one_shot = true
-script = ExtResource( 3 )
 
 [node name="CopperButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 margin_top = 70.0
@@ -60,14 +60,15 @@ margin_bottom = 90.0
 [node name="Bronze" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_right = 48.0
 margin_bottom = 48.0
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="ProgressBar2" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
+script = ExtResource( 4 )
 
-[node name="Bronze button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="BronzeButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
 margin_top = 70.0
 margin_right = 48.0
 margin_bottom = 90.0
@@ -87,6 +88,7 @@ texture = ExtResource( 5 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
+script = ExtResource( 6 )
 
 [node name="SilverButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
 margin_top = 70.0
@@ -108,12 +110,13 @@ margin_bottom = 90.0
 [node name="Gold" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_right = 48.0
 margin_bottom = 48.0
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="ProgressBar4" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
+script = ExtResource( 8 )
 
 [node name="GoldButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer4"]
 margin_top = 70.0
@@ -126,15 +129,16 @@ margin_left = 78.0
 margin_right = 126.0
 margin_bottom = 90.0
 
-[node name="platinum" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5"]
+[node name="Platinum" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5"]
 margin_right = 48.0
 margin_bottom = 48.0
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 
 [node name="ProgressBar5" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 66.0
+script = ExtResource( 10 )
 
 [node name="PlatinumButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5"]
 margin_top = 70.0
@@ -142,4 +146,8 @@ margin_right = 48.0
 margin_bottom = 90.0
 text = "Press"
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CopperButton" to="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/ProgressBar/Timer" method="_on_CopperButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/CopperButton" to="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/ProgressBar" method="_on_CopperButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2/BronzeButton" to="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2/ProgressBar2" method="_on_BronzeButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer3/SilverButton" to="CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer3/ProgressBar3" method="_on_SilverButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer4/GoldButton" to="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer4/ProgressBar4" method="_on_GoldButton_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5/PlatinumButton" to="CenterContainer/VBoxContainer/HBoxContainer2/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]

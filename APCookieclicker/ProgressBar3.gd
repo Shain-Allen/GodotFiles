@@ -1,4 +1,4 @@
-#Copper.gd
+#Silver
 extends ProgressBar
 
 export var Proccess_Time = 2
@@ -26,7 +26,7 @@ func _ready():
 func on_timeout_complete():
 		can_process = true
 
-func _on_CopperButton_pressed():
+func _on_SilverButton_pressed():
 	#makes button unpressable
 	can_process = false
 	#start the timer
