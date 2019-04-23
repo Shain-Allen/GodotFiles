@@ -1,4 +1,4 @@
-#Platinum
+#Bronze
 extends ProgressBar
 
 export var Proccess_Time = 2
@@ -21,12 +21,15 @@ func _ready():
 	
 	#process for UI
 	set_process(true)
+	
+	max_value = Proccess_Time
 
 #makes button usable again
 func on_timeout_complete():
 		can_process = true
+		Global.Metal_amount[Global.Metals.Bronze] += 1
 
-func _on_PlatinumButton_pressed():
+func _on_BronzeButton_pressed():
 	#makes button unpressable
 	can_process = false
 	#start the timer
@@ -36,4 +39,4 @@ func _process(delta):
 	#set the progress bar to the remaining time
 	set_percent_visible(timer.get_time_left())
 	
-	print(timer.get_time_left())
+	#print(timer.get_time_left())

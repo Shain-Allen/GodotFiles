@@ -1,6 +1,8 @@
 extends Control
 
-
+func _ready():
+	Global.Total_money = 0
+	Global.Metal_amount = [0, 0, 0, 0, 0]
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://TheGame.tscn")
