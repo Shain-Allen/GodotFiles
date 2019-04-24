@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	Global.Total_money = 0
+	Global.Total_money = 100
 	Global.Metal_amount = [0, 0, 0, 0, 0]
 
 func _on_Start_pressed():
