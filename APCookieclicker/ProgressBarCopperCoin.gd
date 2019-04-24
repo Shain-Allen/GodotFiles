@@ -1,8 +1,9 @@
-#Silver
+#Copper Coin
 extends ProgressBar
 
 export var Proccess_Time = 2
-export var metal_cost = 1
+export var metaltoCoin = 3
+export var Price = 1
 var can_process = true
 var timer = null
 signal Time_done
@@ -29,18 +30,26 @@ func _ready():
 #makes button usable again
 func on_timeout_complete():
 		can_process = true
-		Global.Metal_amount[Global.Metals.Silver] += 1
+		Global.Coin_amount[Global.Metals.Copper] += 1
 		emit_signal("Time_done")
 
-func _on_SilverButton_pressed():
+func _on_ButtonCopperCoinMake_pressed():
 	#makes button unpressable
 	can_process = false
 	#start the timer
 	timer.start()
-	Global.Total_money -= metal_cost
+	if Global.Metal_amount[Global.Metals.Copper] >= 3:
+		Global.Metal_amount[Global.Metals.Copper] -= metaltoCoin
+
 
 func _process(delta):
 	#set the progress bar to the remaining time
 	value = timer.get_time_left()
 	
-	#print(timer.get_time_left())
+
+
+func _on_ButtonCopperCoinSell_pressed():
+	if Global.Coin_amount[Global.Metals.Copper] >= 1:
+		Global.Coin_amount[Global.Metals.Copper] -= 1
+		Global.Total_money += Price
+	pass # Replace with function body.

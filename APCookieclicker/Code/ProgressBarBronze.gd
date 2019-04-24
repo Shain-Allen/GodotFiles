@@ -2,6 +2,7 @@
 extends ProgressBar
 
 export var Proccess_Time = 2
+export var metal_cost = 1
 var can_process = true
 var timer = null
 signal Time_done
@@ -37,9 +38,10 @@ func _on_BronzeButton_pressed():
 	can_process = false
 	#start the timer
 	timer.start()
+	Global.Total_money -= metal_cost
 
 func _process(delta):
 	#set the progress bar to the remaining time
-	set_percent_visible(timer.get_time_left())
+	value = timer.get_time_left()
 	
 	#print(timer.get_time_left())

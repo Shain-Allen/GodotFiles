@@ -2,8 +2,11 @@
 extends ProgressBar
 
 export var Proccess_Time = 2
+export var metal_cost = 1
+export var Price = 1
 var can_process = true
 var timer = null
+signal Time_done
 
 func _ready():
 	#create Timer for the timer bar
@@ -28,15 +31,17 @@ func _ready():
 func on_timeout_complete():
 		can_process = true
 		Global.Metal_amount[Global.Metals.Platinum] += 1
+		emit_signal("Time_done")
 
 func _on_PlatinumButton_pressed():
 	#makes button unpressable
 	can_process = false
 	#start the timer
 	timer.start()
+	Global.Total_money -= metal_cost
 
 func _process(delta):
 	#set the progress bar to the remaining time
-	set_percent_visible(timer.get_time_left())
+	value = timer.get_time_left()
 	
 	#print(timer.get_time_left())
