@@ -38,14 +38,14 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=4]
-size = 20
 font_data = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 4 )
 
@@ -53,38 +53,55 @@ font_data = ExtResource( 4 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -200.0
+margin_right = 340.0
+margin_bottom = 210.0
+
+[node name="Bars" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 24.0
+margin_right = 36.0
+margin_bottom = 20.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 73.0
-margin_top = 72.0
-margin_right = 267.0
-margin_bottom = 348.0
+[node name="CenterContainer" type="CenterContainer" parent="TabContainer/Bars"]
+margin_left = -4.0
+margin_right = 336.0
+margin_bottom = 386.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer"]
+margin_left = 145.0
+margin_top = 177.0
+margin_right = 195.0
+margin_bottom = 209.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer"]
 editor/display_folded = true
 margin_right = 194.0
 margin_bottom = 124.0
 alignment = 1
 
-[node name="Bronze" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Bronze" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_right = 62.0
 margin_bottom = 124.0
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/Bronze"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
 margin_bottom = 117.0
 
-[node name="Bronze" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
+[node name="Bronze" type="TextureRect" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 1 )
 
-[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
+[node name="Label2" type="Label" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
@@ -92,37 +109,37 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 3 )
 
-[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 84.0
 theme = SubResource( 3 )
 script = ExtResource( 5 )
 
-[node name="BronzeButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
+[node name="BronzeButton" type="Button" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2"]
 margin_top = 88.0
 margin_right = 48.0
 margin_bottom = 108.0
 text = "Press"
 script = ExtResource( 6 )
 
-[node name="Silver" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Silver" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 66.0
 margin_right = 128.0
 margin_bottom = 124.0
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/Silver"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
 margin_bottom = 117.0
 
-[node name="Silver" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
+[node name="Silver" type="TextureRect" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 7 )
 
-[node name="Label3" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
+[node name="Label3" type="Label" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
@@ -130,36 +147,36 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 8 )
 
-[node name="ProgressBar3" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
+[node name="ProgressBar3" type="ProgressBar" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
 script = ExtResource( 9 )
 
-[node name="SilverButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
+[node name="SilverButton" type="Button" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3"]
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 110.0
 text = "Press"
 script = ExtResource( 10 )
 
-[node name="Copper" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+[node name="Copper" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
 margin_left = 132.0
 margin_right = 194.0
 margin_bottom = 124.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer/Copper"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
 margin_bottom = 117.0
 
-[node name="Copper" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
+[node name="Copper" type="TextureRect" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 11 )
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
@@ -167,42 +184,44 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 12 )
 
-[node name="ProgressBar" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
 max_value = 2.0
 script = ExtResource( 13 )
 
-[node name="CopperButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
+[node name="CopperButton" type="Button" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer"]
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 110.0
 text = "Press"
 script = ExtResource( 14 )
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer"]
 margin_top = 128.0
 margin_right = 194.0
-margin_bottom = 276.0
+margin_bottom = 252.0
 alignment = 1
 
-[node name="Gold" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_right = 62.0
-margin_bottom = 148.0
+[node name="Gold" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2"]
+editor/display_folded = true
+margin_left = 33.0
+margin_right = 95.0
+margin_bottom = 124.0
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2/Gold"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
-margin_bottom = 141.0
+margin_bottom = 117.0
 
-[node name="Gold" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
+[node name="Gold" type="TextureRect" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 15 )
 
-[node name="Label4" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
+[node name="Label4" type="Label" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
@@ -210,36 +229,37 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 16 )
 
-[node name="ProgressBar4" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
+[node name="ProgressBar4" type="ProgressBar" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
 script = ExtResource( 17 )
 
-[node name="GoldButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
+[node name="GoldButton" type="Button" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4"]
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 110.0
 text = "Press"
 script = ExtResource( 18 )
 
-[node name="Platinum" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 148.0
+[node name="Platinum" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2"]
+editor/display_folded = true
+margin_left = 99.0
+margin_right = 161.0
+margin_bottom = 124.0
 
-[node name="VBoxContainer5" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2/Platinum"]
+[node name="VBoxContainer5" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
-margin_bottom = 141.0
+margin_bottom = 117.0
 
-[node name="Platinum" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
+[node name="Platinum" type="TextureRect" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 19 )
 
-[node name="Label5" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
+[node name="Label5" type="Label" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
@@ -247,105 +267,125 @@ custom_fonts/font = SubResource( 1 )
 align = 1
 script = ExtResource( 20 )
 
-[node name="ProgressBar5" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
+[node name="ProgressBar5" type="ProgressBar" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
 script = ExtResource( 21 )
 
-[node name="PlatinumButton" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
+[node name="PlatinumButton" type="Button" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5"]
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 110.0
 text = "Press"
 script = ExtResource( 22 )
 
-[node name="CopperCoin" type="PanelContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
-margin_left = 132.0
-margin_right = 194.0
+[node name="Coins" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+
+[node name="CenterContainer" type="CenterContainer" parent="TabContainer/Coins"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer"]
+margin_left = 135.0
+margin_top = 113.0
+margin_right = 197.0
+margin_bottom = 261.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer"]
+margin_right = 62.0
 margin_bottom = 148.0
 
-[node name="VBoxContainerCopperCoin" type="VBoxContainer" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin"]
+[node name="CopperCoin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 62.0
+margin_bottom = 148.0
+
+[node name="VBoxContainerCopperCoin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin"]
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
 margin_bottom = 141.0
 
-[node name="CopperCoinpic" type="TextureRect" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin"]
+[node name="CopperCoinpic" type="TextureRect" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
 margin_right = 48.0
 margin_bottom = 48.0
 texture = ExtResource( 23 )
 
-[node name="CopperCoinamountText" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin"]
+[node name="CopperCoinamountText" type="Label" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 align = 1
 script = ExtResource( 24 )
 
-[node name="ProgressBarCopperCoin" type="ProgressBar" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin"]
+[node name="ProgressBarCopperCoin" type="ProgressBar" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
 margin_top = 72.0
 margin_right = 48.0
 margin_bottom = 86.0
 script = ExtResource( 25 )
 
-[node name="ButtonCopperCoinMake" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin"]
+[node name="ButtonCopperCoinMake" type="Button" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
 margin_top = 90.0
 margin_right = 48.0
 margin_bottom = 110.0
 text = "make"
 script = ExtResource( 26 )
 
-[node name="ButtonCopperCoinSell" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin"]
+[node name="ButtonCopperCoinSell" type="Button" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
 margin_top = 114.0
 margin_right = 48.0
 margin_bottom = 134.0
 text = "Sell"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-margin_right = 149.0
-margin_bottom = 47.0
+margin_right = 100.0
+margin_bottom = 32.0
 
 [node name="CenterContainer" type="CenterContainer" parent="MarginContainer"]
-margin_right = 149.0
-margin_bottom = 47.0
+margin_right = 100.0
+margin_bottom = 32.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 63.0
-margin_top = 13.0
-margin_right = 85.0
-margin_bottom = 33.0
+margin_left = 39.0
+margin_top = 6.0
+margin_right = 61.0
+margin_bottom = 26.0
 
 [node name="Money" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
 margin_right = 18.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 text = "$"
 
 [node name="TotalMoney" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
 script = ExtResource( 27 )
 
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" to="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_ProgressBar_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" method="_on_BronzeButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_BronzeButton_pressed"]
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/ProgressBar3" to="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" method="_on_ProgressBar3_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" to="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/ProgressBar3" method="_on_SilverButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" to="CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" method="_on_SilverButton_pressed"]
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/ProgressBar" to="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" method="_on_ProgressBar_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" to="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/ProgressBar" method="_on_CopperButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" to="CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" method="_on_CopperButton_pressed"]
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/ProgressBar4" to="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" method="_on_ProgressBar4_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" to="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/ProgressBar4" method="_on_GoldButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" to="CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" method="_on_GoldButton_pressed"]
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" to="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_ProgressBar5_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_PlatinumButton_pressed"]
-[connection signal="Time_done" from="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" to="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ProgressBarCopperCoin_Time_done"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ButtonCopperCoinMake_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
-[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinSell" to="CenterContainer/VBoxContainer/HBoxContainer2/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinSell_pressed"]
+[connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_ProgressBar_Time_done"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_BronzeButton_pressed"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" method="_on_BronzeButton_pressed"]
+[connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/ProgressBar3" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" method="_on_ProgressBar3_Time_done"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" method="_on_SilverButton_pressed"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/SilverButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Silver/VBoxContainer3/ProgressBar3" method="_on_SilverButton_pressed"]
+[connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/ProgressBar" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" method="_on_ProgressBar_Time_done"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" method="_on_CopperButton_pressed"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/CopperButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Copper/VBoxContainer/ProgressBar" method="_on_CopperButton_pressed"]
+[connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/ProgressBar4" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" method="_on_ProgressBar4_Time_done"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" method="_on_GoldButton_pressed"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/GoldButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Gold/VBoxContainer4/ProgressBar4" method="_on_GoldButton_pressed"]
+[connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_ProgressBar5_Time_done"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_PlatinumButton_pressed"]
+[connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ButtonCopperCoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinSell_pressed"]

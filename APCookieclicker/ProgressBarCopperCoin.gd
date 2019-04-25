@@ -4,7 +4,7 @@ extends ProgressBar
 export var Proccess_Time = 2
 export var metaltoCoin = 3
 export var Price = 1
-var can_process = true
+var Turn_on = false
 var timer = null
 signal Time_done
 
@@ -26,20 +26,22 @@ func _ready():
 	set_process(true)
 	
 	max_value = Proccess_Time
+	
+	connect("Time_done", get_node("TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake"), "on_Time_is_done")
+	emit_signal("Time_done", "can_process")
 
 #makes button usable again
 func on_timeout_complete():
-		can_process = true
-		Global.Coin_amount[Global.Metals.Copper] += 1
-		emit_signal("Time_done")
+	if Global.Metal_amount[Global.Metals.Copper] >= metaltoCoin:
+		Turn_on = true
+	Global.Coin_amount[Global.Metals.Copper] += 1
 
 func _on_ButtonCopperCoinMake_pressed():
+	Global.Metal_amount[Global.Metals.Copper] -= metaltoCoin
 	#makes button unpressable
-	can_process = false
+	Turn_on = false
 	#start the timer
 	timer.start()
-	if Global.Metal_amount[Global.Metals.Copper] >= 3:
-		Global.Metal_amount[Global.Metals.Copper] -= metaltoCoin
 
 
 func _process(delta):
@@ -49,7 +51,7 @@ func _process(delta):
 
 
 func _on_ButtonCopperCoinSell_pressed():
-	if Global.Coin_amount[Global.Metals.Copper] >= 1:
+	if Global.Coin_amount[Global.Metals.Copper] > 0:
 		Global.Coin_amount[Global.Metals.Copper] -= 1
 		Global.Total_money += Price
 	pass # Replace with function body.

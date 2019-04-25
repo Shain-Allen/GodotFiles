@@ -2,15 +2,14 @@ extends Button
 
 
 
-func _on_ProgressBarCopperCoin_Time_done():
-	disabled = false
-	pass # Replace with function body.
-
-
-func _on_ButtonCopperCoinMake_pressed():
-	disabled = true
-	pass # Replace with function body.
-
+func on_Time_is_done(Turn_on):
+	if Turn_on == true:
+		if Global.Metal_amount[Global.Metals.Copper] >= 3:
+			disabled = false
+		else:
+			disabled = true
+	print(Turn_on)
+	pass
+	
 func _process(delta):
-	if Global.Metal_amount[Global.Metals.Copper] >= 3:
-		disabled = true
+	pass
