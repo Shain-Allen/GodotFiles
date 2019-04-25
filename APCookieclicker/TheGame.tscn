@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/ingot_01b.png" type="Texture" id=1]
 [ext_resource path="res://Text/Khronopix.ttf" type="DynamicFontData" id=2]
@@ -23,10 +23,11 @@
 [ext_resource path="res://Code/ProgressBarPlatinum.gd" type="Script" id=21]
 [ext_resource path="res://Code/PlatinumButton.gd" type="Script" id=22]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01b.png" type="Texture" id=23]
-[ext_resource path="res://CopperCoinamountText.gd" type="Script" id=24]
-[ext_resource path="res://ProgressBarCopperCoin.gd" type="Script" id=25]
-[ext_resource path="res://ButtonCopperCoinMake.gd" type="Script" id=26]
-[ext_resource path="res://Code/Player money.gd" type="Script" id=27]
+[ext_resource path="res://Code/CopperCoinamountText.gd" type="Script" id=24]
+[ext_resource path="res://Code/ProgressBarCopperCoin.gd" type="Script" id=25]
+[ext_resource path="res://Code/ButtonCopperCoinMake.gd" type="Script" id=26]
+[ext_resource path="res://TimerCopperCoin.gd" type="Script" id=27]
+[ext_resource path="res://Code/Player money.gd" type="Script" id=28]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -65,9 +66,9 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
-margin_top = 24.0
-margin_right = 36.0
-margin_bottom = 20.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
 
 [node name="CenterContainer" type="CenterContainer" parent="TabContainer/Bars"]
 margin_left = -4.0
@@ -243,7 +244,6 @@ text = "Press"
 script = ExtResource( 18 )
 
 [node name="Platinum" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2"]
-editor/display_folded = true
 margin_left = 99.0
 margin_right = 161.0
 margin_bottom = 124.0
@@ -344,6 +344,10 @@ margin_right = 48.0
 margin_bottom = 134.0
 text = "Sell"
 
+[node name="TimerCopperCoin" type="Timer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin"]
+one_shot = true
+script = ExtResource( 27 )
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 margin_right = 100.0
 margin_bottom = 32.0
@@ -369,7 +373,7 @@ margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 20.0
 custom_fonts/font = SubResource( 6 )
-script = ExtResource( 27 )
+script = ExtResource( 28 )
 
 [connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_ProgressBar_Time_done"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_BronzeButton_pressed"]
@@ -386,6 +390,9 @@ script = ExtResource( 27 )
 [connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_ProgressBar5_Time_done"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_PlatinumButton_pressed"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/TimerCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinSell_pressed"]
+[connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_TimerCopperCoin_Current_Time"]
+[connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_TimerCopperCoin_timeout"]
+[connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/CopperCoin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_Timer_timeout"]
