@@ -1,6 +1,14 @@
 extends Button
 
+func _ready():
+	pass
 
+func _process(delta):
+	if Global.Metal_amount[Global.Metals.Copper] >= 3:
+		disabled = false
+	else:
+		disabled = true
+	pass
 
 func _on_ButtonCopperCoinMake_pressed():
 	disabled = true
