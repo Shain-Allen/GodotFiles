@@ -7,9 +7,6 @@ export var Price = 4
 
 func _ready():
 	max_value = Proccess_Time
-	
-func _process(delta):
-	pass
 
 func _on_TimerCopperCoin_timeout():
 	Global.Coin_amount[Global.Metals.Copper] += 1
@@ -23,7 +20,6 @@ func _on_ButtonCopperCoinSell_pressed():
 	if Global.Coin_amount[Global.Metals.Copper] >= 1:
 		Global.Total_money += Price
 		Global.Coin_amount[Global.Metals.Copper] -= 1
-		
 	pass # Replace with function body.
 
 func _on_TimerCopperCoin_Current_Time(leftover):
