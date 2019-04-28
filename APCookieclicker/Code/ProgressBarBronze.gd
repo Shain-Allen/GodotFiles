@@ -1,4 +1,4 @@
-#bronze
+#sets the progress bar Graphic
 extends ProgressBar
 
 export var Proccess_Time = 2

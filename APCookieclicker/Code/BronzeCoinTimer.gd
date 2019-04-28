@@ -1,3 +1,4 @@
+#this controls the timer
 extends Timer
 
 export var Proccess_Time = 2

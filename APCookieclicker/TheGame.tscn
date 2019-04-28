@@ -23,30 +23,30 @@
 [ext_resource path="res://Code/ProgressBarPlatinum.gd" type="Script" id=21]
 [ext_resource path="res://Code/PlatinumButton.gd" type="Script" id=22]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01a.png" type="Texture" id=23]
-[ext_resource path="res://BronzeCoinText.gd" type="Script" id=24]
-[ext_resource path="res://ProgressBarBronzeCoin.gd" type="Script" id=25]
-[ext_resource path="res://BronzeCoinMake.gd" type="Script" id=26]
-[ext_resource path="res://BronzeCoinTimer.gd" type="Script" id=27]
+[ext_resource path="res://Code/BronzeCoinText.gd" type="Script" id=24]
+[ext_resource path="res://Code/ProgressBarBronzeCoin.gd" type="Script" id=25]
+[ext_resource path="res://Code/BronzeCoinMake.gd" type="Script" id=26]
+[ext_resource path="res://Code/BronzeCoinTimer.gd" type="Script" id=27]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01c.png" type="Texture" id=28]
-[ext_resource path="res://SilverCoinText.gd" type="Script" id=29]
-[ext_resource path="res://SilverCoinProgressBar.gd" type="Script" id=30]
-[ext_resource path="res://SilverCoinMake.gd" type="Script" id=31]
-[ext_resource path="res://SilverCoinTimer.gd" type="Script" id=32]
+[ext_resource path="res://Code/SilverCoinText.gd" type="Script" id=29]
+[ext_resource path="res://Code/SilverCoinProgressBar.gd" type="Script" id=30]
+[ext_resource path="res://Code/SilverCoinMake.gd" type="Script" id=31]
+[ext_resource path="res://Code/SilverCoinTimer.gd" type="Script" id=32]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01b.png" type="Texture" id=33]
 [ext_resource path="res://Code/CopperCoinamountText.gd" type="Script" id=34]
 [ext_resource path="res://Code/ProgressBarCopperCoin.gd" type="Script" id=35]
 [ext_resource path="res://Code/ButtonCopperCoinMake.gd" type="Script" id=36]
 [ext_resource path="res://Code/TimerCopperCoin.gd" type="Script" id=37]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01d.png" type="Texture" id=38]
-[ext_resource path="res://Gold CoinText.gd" type="Script" id=39]
-[ext_resource path="res://Gold CoinProgressBar.gd" type="Script" id=40]
-[ext_resource path="res://Gold CoinMake.gd" type="Script" id=41]
-[ext_resource path="res://Gold CoinTimer.gd" type="Script" id=42]
+[ext_resource path="res://Code/Gold CoinText.gd" type="Script" id=39]
+[ext_resource path="res://Code/Gold CoinProgressBar.gd" type="Script" id=40]
+[ext_resource path="res://Code/Gold CoinMake.gd" type="Script" id=41]
+[ext_resource path="res://Code/Gold CoinTimer.gd" type="Script" id=42]
 [ext_resource path="res://Art stuffs/Kyrise's 16x16 RPG Icon Pack - V1.2/icons/48x48/coin_01e.png" type="Texture" id=43]
-[ext_resource path="res://Platinum CoinText.gd" type="Script" id=44]
-[ext_resource path="res://Platinum CoinProgressBar.gd" type="Script" id=45]
-[ext_resource path="res://Platinum CoinMake.gd" type="Script" id=46]
-[ext_resource path="res://Platinum CoinTimer.gd" type="Script" id=47]
+[ext_resource path="res://Code/Platinum CoinText.gd" type="Script" id=44]
+[ext_resource path="res://Code/Platinum CoinProgressBar.gd" type="Script" id=45]
+[ext_resource path="res://Code/Platinum CoinMake.gd" type="Script" id=46]
+[ext_resource path="res://Code/Platinum CoinTimer.gd" type="Script" id=47]
 [ext_resource path="res://Code/Player money.gd" type="Script" id=48]
 
 [sub_resource type="DynamicFont" id=1]
@@ -59,17 +59,17 @@ font_data = ExtResource( 4 )
 [sub_resource type="Theme" id=3]
 default_font = SubResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 4 )
-
 [sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
 size = 20
 font_data = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 20
 font_data = ExtResource( 4 )
 
@@ -85,8 +85,6 @@ margin_right = 340.0
 margin_bottom = 210.0
 
 [node name="Bars" type="Tabs" parent="TabContainer"]
-editor/display_folded = true
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -100,10 +98,10 @@ margin_right = 336.0
 margin_bottom = 386.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer"]
-margin_left = 145.0
-margin_top = 177.0
-margin_right = 195.0
-margin_bottom = 209.0
+margin_left = 73.0
+margin_top = 67.0
+margin_right = 267.0
+margin_bottom = 319.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer"]
 margin_right = 194.0
@@ -309,6 +307,7 @@ text = "Press"
 script = ExtResource( 22 )
 
 [node name="Coins" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -321,10 +320,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer"]
-margin_left = 69.0
-margin_top = 40.0
-margin_right = 263.0
-margin_bottom = 334.0
+margin_left = 141.0
+margin_top = 171.0
+margin_right = 191.0
+margin_bottom = 203.0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer"]
@@ -351,7 +350,7 @@ texture = ExtResource( 23 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 script = ExtResource( 24 )
 
 [node name="ProgressBarBronzeCoin" type="ProgressBar" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin"]
@@ -378,6 +377,7 @@ one_shot = true
 script = ExtResource( 27 )
 
 [node name="Silver Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
+editor/display_folded = true
 margin_left = 66.0
 margin_right = 128.0
 margin_bottom = 145.0
@@ -397,7 +397,7 @@ texture = ExtResource( 28 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 script = ExtResource( 29 )
 
 [node name="SilverCoinProgressBar" type="ProgressBar" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin"]
@@ -424,6 +424,7 @@ one_shot = true
 script = ExtResource( 32 )
 
 [node name="Copper Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
+editor/display_folded = true
 margin_left = 132.0
 margin_right = 194.0
 margin_bottom = 145.0
@@ -443,7 +444,7 @@ texture = ExtResource( 33 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 align = 1
 script = ExtResource( 34 )
 
@@ -477,6 +478,7 @@ margin_bottom = 294.0
 alignment = 1
 
 [node name="Gold Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2"]
+editor/display_folded = true
 margin_left = 33.0
 margin_right = 95.0
 margin_bottom = 145.0
@@ -496,7 +498,7 @@ texture = ExtResource( 38 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 script = ExtResource( 39 )
 
 [node name="Gold CoinProgressBar" type="ProgressBar" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin"]
@@ -523,6 +525,7 @@ one_shot = true
 script = ExtResource( 42 )
 
 [node name="Platinum Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2"]
+editor/display_folded = true
 margin_left = 99.0
 margin_right = 161.0
 margin_bottom = 145.0
@@ -542,7 +545,7 @@ texture = ExtResource( 43 )
 margin_top = 52.0
 margin_right = 48.0
 margin_bottom = 68.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 4 )
 script = ExtResource( 44 )
 
 [node name="Platinum CoinProgressBar" type="ProgressBar" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin"]
@@ -585,16 +588,15 @@ margin_bottom = 26.0
 [node name="Money" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
 margin_right = 18.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "$"
 
 [node name="TotalMoney" type="Label" parent="MarginContainer/CenterContainer/HBoxContainer"]
 margin_left = 22.0
 margin_right = 22.0
 margin_bottom = 20.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 script = ExtResource( 48 )
-
 [connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_ProgressBar_Time_done"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/ProgressBar" method="_on_BronzeButton_pressed"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer/Bronze/VBoxContainer2/BronzeButton" method="_on_BronzeButton_pressed"]
@@ -610,36 +612,36 @@ script = ExtResource( 48 )
 [connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_ProgressBar5_Time_done"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_PlatinumButton_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" method="_on_BronzeCoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" method="_on_BronzeCoinTimer_timeout"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" method="_on_SilverCoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" method="_on_SilverCoinTimer_timeout"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_TimerCopperCoin_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_TimerCopperCoin_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_TimerCopperCoin_timeout"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" method="_on_Gold_CoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" method="_on_Gold_CoinTimer_timeout"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" method="_on_Platinum_CoinMake_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinTimer_Current_Time"]
