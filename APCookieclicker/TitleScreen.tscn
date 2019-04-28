@@ -47,6 +47,5 @@ margin_right = 168.0
 margin_bottom = 116.0
 custom_fonts/font = SubResource( 2 )
 text = "Quit"
-
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_Start_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
