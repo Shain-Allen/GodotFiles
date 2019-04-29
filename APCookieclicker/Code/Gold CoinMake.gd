@@ -1,7 +1,5 @@
 extends Button
 
-
-
 func _process(delta):
 	if Global.Metal_amount[Global.Metals.Gold] >= 2:
 		disabled = false

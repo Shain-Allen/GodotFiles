@@ -85,7 +85,6 @@ margin_right = 340.0
 margin_bottom = 210.0
 
 [node name="Bars" type="Tabs" parent="TabContainer"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -99,10 +98,10 @@ margin_right = 336.0
 margin_bottom = 386.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Bars/CenterContainer"]
-margin_left = 145.0
-margin_top = 177.0
-margin_right = 195.0
-margin_bottom = 209.0
+margin_left = 73.0
+margin_top = 67.0
+margin_right = 267.0
+margin_bottom = 319.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer"]
 margin_right = 194.0
@@ -110,7 +109,6 @@ margin_bottom = 124.0
 alignment = 1
 
 [node name="Copper" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_right = 62.0
 margin_bottom = 124.0
 
@@ -149,7 +147,6 @@ text = "Press"
 script = ExtResource( 5 )
 
 [node name="Bronze" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_left = 66.0
 margin_right = 128.0
 margin_bottom = 124.0
@@ -189,7 +186,6 @@ text = "Press"
 script = ExtResource( 10 )
 
 [node name="Silver" type="PanelContainer" parent="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_left = 132.0
 margin_right = 194.0
 margin_bottom = 124.0
@@ -314,6 +310,7 @@ text = "Press"
 script = ExtResource( 22 )
 
 [node name="Coins" type="Tabs" parent="TabContainer"]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 4.0
@@ -326,10 +323,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer"]
-margin_left = 69.0
-margin_top = 37.0
-margin_right = 263.0
-margin_bottom = 337.0
+margin_left = 141.0
+margin_top = 171.0
+margin_right = 191.0
+margin_bottom = 203.0
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer"]
@@ -338,12 +335,10 @@ margin_bottom = 148.0
 alignment = 1
 
 [node name="Copper Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_right = 62.0
 margin_bottom = 148.0
 
 [node name="VBoxContainerCopperCoin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
@@ -390,13 +385,11 @@ script = ExtResource( 27 )
 Proccess_Time = 1
 
 [node name="Bronze Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_left = 66.0
 margin_right = 128.0
 margin_bottom = 148.0
 
 [node name="VBoxContainerBronzeCoin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
@@ -441,13 +434,11 @@ one_shot = true
 script = ExtResource( 32 )
 
 [node name="Silver Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer"]
-editor/display_folded = true
 margin_left = 132.0
 margin_right = 194.0
 margin_bottom = 148.0
 
 [node name="BoxContainerSilverCoin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
@@ -500,13 +491,11 @@ margin_bottom = 300.0
 alignment = 1
 
 [node name="Gold Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2"]
-editor/display_folded = true
 margin_left = 33.0
 margin_right = 95.0
 margin_bottom = 148.0
 
 [node name="BoxContainerGold Coin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
@@ -553,13 +542,11 @@ script = ExtResource( 42 )
 Proccess_Time = 4
 
 [node name="Platinum Coin" type="PanelContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2"]
-editor/display_folded = true
 margin_left = 99.0
 margin_right = 161.0
 margin_bottom = 148.0
 
 [node name="BoxContainerPlatinum Coin" type="VBoxContainer" parent="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin"]
-editor/display_folded = true
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 55.0
@@ -647,37 +634,37 @@ script = ExtResource( 48 )
 [connection signal="Time_done" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_ProgressBar5_Time_done"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" method="_on_PlatinumButton_pressed"]
 [connection signal="pressed" from="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/PlatinumButton" to="TabContainer/Bars/CenterContainer/VBoxContainer/HBoxContainer2/Platinum/VBoxContainer5/ProgressBar5" method="_on_PlatinumButton_pressed"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" method="_on_ButtonCopperCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_ButtonCopperCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_TimerCopperCoin_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ButtonCopperCoinMake" method="_on_TimerCopperCoin_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/TimerCopperCoin" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Copper Coin/VBoxContainerCopperCoin/ProgressBarCopperCoin" method="_on_TimerCopperCoin_timeout"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" method="_on_BronzeCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinMake" method="_on_BronzeCoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/BronzeCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Bronze Coin/VBoxContainerBronzeCoin/ProgressBarBronzeCoin" method="_on_BronzeCoinTimer_timeout"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" method="_on_SilverCoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinMake" method="_on_SilverCoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer/Silver Coin/BoxContainerSilverCoin/SilverCoinProgressBar" method="_on_SilverCoinTimer_timeout"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" method="_on_Gold_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinMake" method="_on_Gold_CoinTimer_timeout"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Gold Coin/BoxContainerGold Coin/Gold CoinProgressBar" method="_on_Gold_CoinTimer_timeout"]
+[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinMake_pressed"]
-[connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" method="_on_Platinum_CoinMake_pressed"]
 [connection signal="pressed" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinSell" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinSell_pressed"]
 [connection signal="Current_Time" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinProgressBar" method="_on_Platinum_CoinTimer_Current_Time"]
 [connection signal="timeout" from="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinTimer" to="TabContainer/Coins/CenterContainer/VBoxContainer/HBoxContainer2/Platinum Coin/BoxContainerPlatinum Coin/Platinum CoinMake" method="_on_Platinum_CoinTimer_timeout"]
