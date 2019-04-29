@@ -3,7 +3,7 @@ extends Button
 
 
 func _process(delta):
-	if Global.Metal_amount[Global.Metals.Gold] >= 3:
+	if Global.Metal_amount[Global.Metals.Gold] >= 2:
 		disabled = false
 	else:
 		disabled = true
@@ -15,6 +15,6 @@ func _on_Gold_CoinMake_pressed():
 
 
 func _on_Gold_CoinTimer_timeout():
-	if Global.Metal_amount[Global.Metals.Gold] >= 3:
+	if Global.Metal_amount[Global.Metals.Gold] >= 2:
 		disabled = false
 	pass # Replace with function body.
