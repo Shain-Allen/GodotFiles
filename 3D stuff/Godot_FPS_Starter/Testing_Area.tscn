@@ -334,4 +334,3 @@ shape = SubResource( 8 )
 [node name="MeshInstance" type="MeshInstance" parent="Cubes/GreenCube6"]
 mesh = SubResource( 9 )
 material/0 = SubResource( 12 )
-
